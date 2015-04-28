@@ -19,24 +19,24 @@ Set a preprocessor flag in XCode "WITH_TLS" by clicking the project in XCode the
 Search for preprocessor macros and add "WITH_TLS" to debug and release
 
 Call init then connect then subscribe
-
+```objc
 -(id)initWithUsername:(NSString *)username password:(NSString *)password caCert:(NSString *)caCert clientCert:(NSString *)clientCert clientKey:(NSString *)clientKey;
 
 -(void)connectToHost:(NSString *)host port:(int)port keepAlive:(int)keepAlive;
 
 -(void)subscribeToTopic:(NSString *)topic;
-
+```
 # MQTTClient without TLS
 Add MQTTClient.h and MQTTClient.m to your project.  
 Add the libmosquitto source from the link above to your project.
 
 Designate one of the objects as the MQTTClientDelegate
 There is one required method 
-
+```objc
 -(void)messageReceived:(NSData *)messageData onTopic:(NSString *)topic;
-
+```
 Call init and then connect 
-
+```objc
 -(id)init;
 
 -(id)initWithUsername:(NSString *)username password:(NSString *)password;
@@ -44,3 +44,4 @@ Call init and then connect
 -(void)connectToHost:(NSString *)host port:(int)port keepAlive:(int)keepAlive;
 
 -(void)subscribeToTopic:(NSString *)topic;
+```
